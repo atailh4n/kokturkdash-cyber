@@ -1,0 +1,15 @@
+{
+  "name": "kokturkdash-cyber",
+  "version": "0.0.2-public",
+  "description": "Köktürk Dash modülü için tema paketi",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index"
+  },
+  "keywords": [
+    "theme",
+    "dashboard"
+  ],
+  "author": "atailh4n",
+  "license": "MIT"
+}

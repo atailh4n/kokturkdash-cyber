@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <link rel="icon" type="image/png" sizes="16x16" href="<%=themeConfig.iconURL%>">
+      <title><%=themeConfig.websiteIsim%> - Komut Listesi</title>
+      <link href="assets/node_modules/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/style.css" rel="stylesheet">
+      <link href="css/colors/default.css" id="theme" rel="stylesheet">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body class="fix-header card-no-border fix-sidebar">
+      <%-include('partials/preloader.ejs')%>
+      <div id="main-wrapper">
+         <%-include('partials/topbar.ejs', {req:req})%>
+         <%-include('partials/header.ejs', {now:'komutlar'})%>
+         <div class="page-wrapper">
+            <div class="container-fluid">
+               <div class="row page-titles">
+                  <div class="col-md-5 align-self-center">
+                     <h3 class="text-themecolor"><%=themeConfig.komutlar.sayfaBasligi || "config.komutlar.sayfaBasligi"%></h3>
+                     <div>Aşağıda botun tüm komutları listelenmektedir.</div>
+                     <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="javascript:void(0)">Giriş Menüsü</a></li>
+                        <li class="breadcrumb-item active">Komutlar</li>
+                     </ol>
+                  </div>
+               </div>
+               <div class="row">
+                  <div class="col-12">
+                     <div class="card">
+                        <div class="card-body">
+                           <h4 class="card-title"><%=themeConfig.komutlar.table.title || "config.komutlar.table.title"%></h4>
+                           <h6 class="card-subtitle"><%=themeConfig.komutlar.table.subTitle || "config.komutlar.table.subTitle"%></h6>
+                           <div class="table-responsive">
+                              <table class="table">
+                                 <%if(themeConfig.komutlar.table.ikidil === true){%>
+                                 <thead>
+                                    <tr>
+                                       <th width="10%">Komut İsmi</th>
+                                       <th width="20%">Kullanım</th>
+                                       <th width="20%">Usage EN</th>
+                                       <th width="25%">Açıklama</th>
+                                       <th width="25%">Description EN</th>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+                                    <%themeConfig.komutlar.table.list.forEach((item)=>{%>
+                                    <tr>
+                                       <td><%=item.komutIsmi%></td>
+                                       <td><code><%=item.komutKullanim%></code></td>
+                                       <td><code><%=item.komutKullanimEN%></code></td>
+                                       <td><%=item.komutAciklama%></td>
+                                       <td><%=item.komutAciklamaEN%></td>
+                                    </tr>
+                                    <%})%>
+                                 </tbody>
+                                 <%}else{%>
+                                    <thead>
+                                       <tr>
+                                          <th width="20%">Komut İsmi</th>
+                                          <th width="30%">Kullanım</th>
+                                          <th width="50%">Açıklama</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       <%themeConfig.komutlar.table.list.forEach((item)=>{%>
+                                       <tr>
+                                          <td><%=item.komutIsmi%></td>
+                                          <td><code><%=item.komutKullanim%></code></td>
+                                          <td><%=item.komutAciklama%></td>
+                                       </tr>
+                                       <%})%>
+                                    </tbody>
+                                    <%}%>
+                              </table>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <%-include('partials/footer.ejs')%>
+         </div>
+      </div>
+      <script src="assets/node_modules/jquery/jquery.min.js"></script>
+      <script src="assets/node_modules/bootstrap/js/popper.min.js"></script>
+      <script src="assets/node_modules/bootstrap/js/bootstrap.min.js"></script>
+      <script src="js/perfect-scrollbar.jquery.min.js"></script>
+      <script src="js/waves.js"></script>
+      <script src="js/sidebarmenu.js"></script>
+      <script src="js/custom.min.js"></script>
+      <script src="assets/node_modules/peity/jquery.peity.min.js"></script>
+      <script src="assets/node_modules/peity/jquery.peity.init.js"></script>
+      <script src="https://assistants.ga/purecookie.js"></script>
+   </body>
+</html>
