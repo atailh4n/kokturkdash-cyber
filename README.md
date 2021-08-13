@@ -5,7 +5,7 @@
 
 **[kokturkdash](https://npmjs.com/packages/kokturkdash) için tema modülüdür.**
 
-# 😎0.0.2-beta Sürümü Güncellemesi:
+# 😎0.0.2-public Sürümü Güncellemesi:
 * Tema düzeltmeleri
 * kokturkdash 0.0.4-public için uyumluluk
 * Yeni class ve callback uyumluluğu
